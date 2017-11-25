@@ -81,16 +81,16 @@ function calinputs (arr){
 }
 
 function shoplist(arr,list){
-    let aa=calinputs(inputs);
+    //let aa=calinputs(inputs);
     let result=[];
     let allcost=0;
-    for(let i=0;i<aa.length;i++){
+    for(let i=0;i<arr.length;i++){
         for(let j=0;j<itemInfo().length;j++){
 
-            if(aa[i].item==itemInfo()[j].barcode){
-                let con1=parseInt(isOnSale(aa[i].item,list));
-                let con=parseInt(aa[i].cou - con1);
-                let str="名称："+itemInfo()[j].name+"，数量："+aa[i].cou+itemInfo()[j].unit+"，单价："+itemInfo()[j].price.toFixed(2)+"(元)，小计："+(itemInfo()[j].price*con).toFixed(2)+"(元)";
+            if(arr[i].item==itemInfo()[j].barcode){
+                let con1=parseInt(isOnSale(arr[i].item,list));
+                let con=parseInt(arr[i].cou - con1);
+                let str="名称："+itemInfo()[j].name+"，数量："+arr[i].cou+itemInfo()[j].unit+"，单价："+itemInfo()[j].price.toFixed(2)+"(元)，小计："+(itemInfo()[j].price*con).toFixed(2)+"(元)";
                 result.push(str);
                 allcost+=itemInfo()[j].price*con;
                 break;
